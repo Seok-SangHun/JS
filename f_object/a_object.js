@@ -43,20 +43,49 @@
 // 각 정보를 출력하되, 재고-1과 재고-2는 반복문을 사용해서 출력한다.
 // 재고-1이 실재고이고, 재고-2는 기타재고이다.
 // 상품 정보에 재고-1을 사용해서 총 가격을 리턴하는 메소드를 선언한다.
+// const product = {
+//     number: 1,
+//     name: "새우깡",
+//     price: 1500,
+//     inventory1: 5,
+//     inventory2: 2,
+//     total: () => {
+//         return product.inventory1 * product.price;
+//     },
+// };
+// console.log(product.number);
+// console.log(product.name);
+// console.log(product.price);
+// for (let i = 0; i < 2; i++) {
+//     console.log(product[`inventory${i + 1}`]);
+// }
+// console.log(product.total());
+
 const product = {
-    number: 1,
-    name: "새우깡",
-    price: 1500,
-    inventory1: 5,
-    inventory2: 2,
-    total: () => {
-        return product.inventory1 * product.price;
+    id: 1,
+    name: "보리차",
+    price: 1300,
+    "stock-1": 32,
+    "stock-2": -2,
+    getTotal: () => {
+        return product.price * product["stock-1"];
     },
 };
-console.log(product.number);
-console.log(product.name);
-console.log(product.price);
-for (let i = 0; i < 2; i++) {
-    console.log(product[`inventory${i + 1}`]);
+
+with (product) {
+    console.log(id, name, price);
+    for (let i = 0; i < 2; i++) {
+        console.log(product[`stock-${i + 1}`]);
+    }
 }
-console.log(product.total());
+
+// 비어있는 객체 선언
+const shop = {};
+
+// key가 존재하지 않다면 추가
+shop.id = "4325";
+console.log(shop);
+
+// key가 존재하면 수정
+shop.id = "1";
+console.log(shop);
