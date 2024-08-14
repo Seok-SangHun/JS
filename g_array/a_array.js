@@ -78,10 +78,50 @@
 // console.log(datas);
 
 // 1~10까지 담은 후 각 값에 제곱을 출력한다.
-let datas = new Array(10).fill(0);
-datas.forEach((data, i, datas) => {
-    datas[i] = i;
-});
-datas.forEach((data) => {
-    console.log((data + 1) * (data + 1));
-});
+// let datas = new Array(10).fill(0);
+// datas.forEach((data, i, datas) => {
+//     datas[i] = i;
+// });
+// datas.forEach((data) => {
+//     console.log((data + 1) * (data + 1));
+// });
+
+// map ((value, index, array) => {})
+// 기존 값을 전달한 callback 함수의 리턴값으로 변경
+// const datas = new Array(10, 6, 4, 8, 2);
+// 기존 값을 두 배 증가시킨다.
+// const updatedDatas = datas.map((data) => data * 2);
+// console.log(updatedDatas);
+
+// filter((value, index, array) => {}) - true, false만 리턴
+const datas = new Array(10, 6, 4, 8, 2);
+const updatedDatas = datas.filter((data) => data % 4 == 0);
+console.log(updatedDatas);
+
+// reduce((temp, data, i) => {}, 초기값)
+// 리턴값을 다시 temp에 담아준다.
+// 초기값을 설정하면 data에 담기고,
+// 초기값을 설정하지 않으면 datas의 첫번째 값이 data에 담긴다.
+// i는 인덱스이며, 초기값의 유무에 따라 시작 인덱스가 바뀐다(초기값이 없으면 1이다).
+// reduce는 누적 알고리즘에서 사용된다.
+// let datas = new Array(5).fill(0).map((data, i) => i + 1);
+// let test = datas.reduce((temp, data, i) => {
+//     return temp + data;
+// });
+
+//문자열
+// split(): 구분점을 전달해서 값을 나눠준다.
+//          Array 객체로 리턴하기 때문에, 문자열을 Array객체로 바꿀 때도 사용한다.
+// console.log("ABC".split(""));
+
+// includes(value): value가 문자열에 포함되었는지 검사
+// console.log("ABC".include("Z"));
+
+// charAt(index): 해당 인덱스의 문자열을 추출
+// console.log("ABCD".charAt(0));
+
+// 형변환
+// parseInt: 정수만 추출해준다.
+// console.log(parseInt("14px") + 1);
+// Number(): 정수 외에 다른 문자열이 있으면 오류
+// console.log(Number("14px") + 1);
