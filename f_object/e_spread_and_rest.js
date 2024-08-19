@@ -1,7 +1,7 @@
-const user = {
-    id: 1,
-    name: "han",
-};
+// const user = {
+//     id: 1,
+//     name: "han",
+// };
 
 // 구조 분해(비구조화 할당)
 // const { id, name } = user;
@@ -30,14 +30,14 @@ const user = {
 // const { id, name, price: value } = product;
 // console.log(id, name, price);
 
-// 객체 스프레드: 값 복사
-const product = {
-    id: 1,
-    name: "상품A",
-    price: 3600,
-};
+// // 객체 스프레드: 값 복사
+// const product = {
+//     id: 1,
+//     name: "상품A",
+//     price: 3600,
+// };
 
-// immutable, 즉, 기존 객체의 주소가 아닌 값만 복사해 온다.
+// // immutable, 즉, 기존 객체의 주소가 아닌 값만 복사해 온다.
 // const otherProduct = { ...product };
 // otherProduct.name = "한동석";
 // console.log(product);
@@ -78,15 +78,15 @@ kindergarten.child4 = child4;
 console.log(kindergarten);
 
 // rest: 나머지
-// const user = {
-//     id: 1,
-//     name: "han",
-//     age: 4,
-// };
+const user = {
+    id: 1,
+    name: "han",
+    age: 4,
+};
 
-// const userUpdated = { ...user, age: 20 };
+const userUpdated = { ...user, age: 20 };
 
-// // age만 가져오고 나머지 프로퍼티는 rest에 담긴다.
-// const { age, ...rest } = userUpdated;
-// console.log(age);
-// console.log(rest);
+// age만 가져오고 나머지 프로퍼티는 rest에 담긴다.
+const { age, ...rest } = userUpdated;
+console.log(age);
+console.log(rest);

@@ -23,12 +23,12 @@
 // console.log(number + 10);
 
 // 숫자를 한글로(3479 -> 삼사칠구)
-// const hangul = [..."공일이삼사오육칠팔구"];
-// const input = "3479";
-// const target = [...input];
+const hangul = [..."공일이삼사오육칠팔구"];
+const input = "3479";
+const target = [...input];
 
-// const result = target.map((number) => hangul[number]).join("");
-// console.log(result);
+const result = target.map((number) => hangul[number]).join("");
+console.log(result);
 
 // ★ special
 // new Array(10).fill(0).forEach(() => {datas[i] = i + 1}) : 리턴 없음, 반복문, 기존 객체

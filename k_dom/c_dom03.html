@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>아이디 속성 선택</title>
+    </head>
+    <body>
+        <h1>아이디 속성 선택</h1>
+        <div id="first">
+            <strong>첫 번째 DIV 입니다.</strong>
+        </div>
+        <div id="second">두 번째 DIV 입니다.</div>
+        <textarea id="third">textarea 입니다.</textarea>
+        <button id="btn">완료</button>
+    </body>
+    <script>
+        const first = document.getElementById("first");
+        const button = document.getElementById("btn");
+        // read / write
+        // read: 값을 수정할 수 없다.
+        // write: 값을 수정할 수 있다.
+
+        // 문자열만 가져온다.
+        // console.log(first.innerText);
+        // 자식요소의 모든 태그까지도 가져온다.
+        // console.log(first.innerHTML);
+
+        // first.innerText = "<strong>수정된 DIV 태그입니다.</strong>";
+        // first.innerHTML = "<strong>수정된 DIV 태그입니다.</strong>";
+
+        const third = document.getElementById("third");
+        console.log(third);
+        console.log(third.innerHTML);
+
+        // button.addEventListener("click", (e) => {
+        //     // 수정 서비스라고 가정하면,
+        //     // innerHTML은 수정 취소 때 활용할 수 있고
+        //     console.log(third.innerHTML);
+        //     // value는 수정 완료 때 활용할 수 있다.
+        //     console.log(third.value);
+        //     console.log("===============");
+        // });
+    </script>
+</html>

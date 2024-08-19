@@ -27,12 +27,12 @@ market.user1 = user1;
 market.user2 = user2;
 market.user3 = user3;
 
-for (let i = 0; i < 3; i++) {
-    console.log(market[`user${i + 1}`]);
-}
+// for (let i = 0; i < 3; i++) {
+//     console.log(market[`user${i + 1}`]);
+// }
 
-const data = JSON.stringify(market);
-console.log(data);
+// const data = JSON.stringify(market);
+// console.log(data);
 
 const marketData = JSON.parse(data);
 console.log(marketData);

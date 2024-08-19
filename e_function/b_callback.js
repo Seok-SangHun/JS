@@ -39,8 +39,8 @@
 //     return result;
 // };
 // // 2. 결과에 2를 곱해서 출력
-// const printResult = (result) => {
-//     console.log(result * 2);
+// const printResult = (re) => {
+//     console.log(re * 2);
 // };
 
 // multiple(3, 5, printResult);
@@ -81,7 +81,7 @@
 // console.log(check);
 
 // let count = getCount(140000, 70000);
-// console.log(count)
+// console.log(count);
 
 // count(1, 10, printBool);
 
@@ -143,24 +143,24 @@
 // // 나이와 성별을 전달 받아서 나이에 따라 성인 또는 미성년자로 분류하고, 성별에 따라 메시지를 출력합니다.
 // // 나이가 20세 이상일 경우 "성인", 그렇지 않을 경우 "미성년자"를 출력합니다.
 // // 성별이 '남'일 경우 "남성", '여'일 경우 "여성"을 출력합니다.
-const categorizePerson = (age, gender, callback) => {
-    let category = age >= 20 ? "성인" : "미성년자";
-    let genderMessage = gender === "남" ? "남성" : "여성";
-    let result = category + ", " + genderMessage;
+// const categorizePerson = (age, gender, callback) => {
+//     let category = age >= 20 ? "성인" : "미성년자";
+//     let genderMessage = gender === "남" ? "남성" : "여성";
+//     let result = category + ", " + genderMessage;
 
-    if (callback) {
-        callback(result);
-    }
+//     if (callback) {
+//         callback(result);
+//     }
 
-    return result;
-};
+//     return result;
+// };
 
-const printCategoryGender = (result) => {
-    console.log(result);
-};
+// const printCategoryGender = (result) => {
+//     console.log(result);
+// };
 
-categorizePerson(25, "남", printCategoryGender); // "성인, 남성"
-categorizePerson(15, "여", printCategoryGender); // "미성년자, 여성"
+// categorizePerson(25, "남", printCategoryGender); // "성인, 남성"
+// categorizePerson(15, "여", printCategoryGender); // "미성년자, 여성"
 
 // 문자열과 문자를 입력받아 해당 문자가 문자열에 포함되어있는지
 // 확인하고 이 결과를 출력하는 함수를 작성하세요
@@ -176,16 +176,16 @@ categorizePerson(15, "여", printCategoryGender); // "미성년자, 여성"
 
 // 농장에서 축사 대청소를 하려고 한다.
 // 소와 돼지의 총합 수와 각각 비교해 가축 중 수가 적은 쪽을 출력
-const compareCowWithPig = (cowCount, pigCount, callback) => {
-    let result = cowCount > pigCount;
-    if (callback) {
-        callback(result);
-    }
-    return result;
-};
+// const compareCowWithPig = (cowCount, pigCount, callback) => {
+//     let result = cowCount > pigCount;
+//     if (callback) {
+//         callback(result);
+//     }
+//     return result;
+// };
 
-const printLessThan = (result) => {
-    console.log(!result ? "소" : "돼지");
-};
+// const printLessThan = (result) => {
+//     console.log(!result ? "소" : "돼지");
+// };
 
-compareCowWithPig(250, 220, printLessThan);
+// compareCowWithPig(250, 220, printLessThan);

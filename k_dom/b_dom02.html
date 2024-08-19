@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>name 속성 선택</title>
+    </head>
+    <body>
+        <form action="" name="join">
+            <div>
+                <input type="text" name="user-id" placeholder="아이디" />
+            </div>
+            <div>
+                <input
+                    type="password"
+                    name="user-password"
+                    placeholder="비밀번호"
+                />
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="language" value="c" /> C언어
+                    <input type="checkbox" name="language" value="python" />
+                    파이썬
+                    <input type="checkbox" name="language" value="java" /> JAVA
+                </label>
+            </div>
+        </form>
+    </body>
+    <script>
+        // 유효성 검사
+        const info = document.getElementsByName("user-id");
+        const userId = info[0];
+        if (!userId.value) {
+            console.log("아이디를 입력해주세요.");
+        }
+
+        // form태그는 input태그의 name으로 프로퍼티가 구성된다.
+        // form태그 객체의 이름은 form태그 name속성의 값이고,
+        // 이를 통해 안에 있는 input태그의 name을 프로퍼티명으로 접근할 수 있다.
+        // join["user-password"].value = "1234";
+
+        // 체크박스를 전체 체크되도록 한다.
+        const checkboxes = document.getElementsByName("language");
+        checkboxes.forEach((checkbox) => {
+            checkbox.checked = true;
+        });
+        // // 체크박스를 전체 체크되도록 한다.
+        // const languages = join.language;
+        // languages.forEach((language) => {
+        //     language.checked = true;
+        // });
+    </script>
+</html>

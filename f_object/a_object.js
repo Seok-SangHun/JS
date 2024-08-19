@@ -2,7 +2,7 @@
 // 함수는 어떤 영역에도 갇혀있지 않은 상태로 선언된 형태
 // 메소드는 어떤 영역 내에 갇혀있는 상태로 선언된 형태
 
-// JS에서는 객체 내부의 필드를 프로퍼티라고 부른다.
+// // JS에서는 객체 내부의 필드를 프로퍼티라고 부른다.
 // let user = {
 //     name: "한동석",
 //     age: 20,
@@ -26,7 +26,7 @@
 // // 이런 상황 외에는 마침표로 접근하는 것이 편하다.
 // console.log(p["data-x"]);
 
-// 만약 프로포티 key값에 규칙성이 있다면,
+// // // 만약 프로포티 key값에 규칙성이 있다면,
 // const user = {
 //     name: "한동석",
 //     address1: "경기도 남양주시",
@@ -61,31 +61,31 @@
 // }
 // console.log(product.total());
 
-const product = {
-    id: 1,
-    name: "보리차",
-    price: 1300,
-    "stock-1": 32,
-    "stock-2": -2,
-    getTotal: () => {
-        return product.price * product["stock-1"];
-    },
-};
+// const product = {
+//     id: 1,
+//     name: "보리차",
+//     price: 1300,
+//     "stock-1": 32,
+//     "stock-2": -2,
+//     getTotal: () => {
+//         return product.price * product["stock-1"];
+//     },
+// };
 
-with (product) {
-    console.log(id, name, price);
-    for (let i = 0; i < 2; i++) {
-        console.log(product[`stock-${i + 1}`]);
-    }
-}
+// with (product) {
+//     console.log(id, name, price);
+//     for (let i = 0; i < 2; i++) {
+//         console.log(product[`stock-${i + 1}`]);
+//     }
+// }
 
-// 비어있는 객체 선언
-const shop = {};
+// // 비어있는 객체 선언
+// const shop = {};
 
-// key가 존재하지 않다면 추가
-shop.id = "4325";
-console.log(shop);
+// // key가 존재하지 않다면 추가
+// shop.id = "4325";
+// console.log(shop);
 
-// key가 존재하면 수정
-shop.id = "1";
-console.log(shop);
+// // key가 존재하면 수정
+// shop.id = "1";
+// console.log(shop);

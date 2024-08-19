@@ -94,9 +94,9 @@
 // console.log(updatedDatas);
 
 // filter((value, index, array) => {}) - true, false만 리턴
-const datas = new Array(10, 6, 4, 8, 2);
-const updatedDatas = datas.filter((data) => data % 4 == 0);
-console.log(updatedDatas);
+// const datas = new Array(10, 6, 4, 8, 2);
+// const updatedDatas = datas.filter((data) => data % 4 == 0);
+// console.log(updatedDatas);
 
 // reduce((temp, data, i) => {}, 초기값)
 // 리턴값을 다시 temp에 담아준다.
@@ -104,10 +104,11 @@ console.log(updatedDatas);
 // 초기값을 설정하지 않으면 datas의 첫번째 값이 data에 담긴다.
 // i는 인덱스이며, 초기값의 유무에 따라 시작 인덱스가 바뀐다(초기값이 없으면 1이다).
 // reduce는 누적 알고리즘에서 사용된다.
-// let datas = new Array(5).fill(0).map((data, i) => i + 1);
-// let test = datas.reduce((temp, data, i) => {
-//     return temp + data;
-// });
+let datas = new Array(5).fill(0).map((data, i) => i + 1);
+let test = datas.reduce((temp, data, i) => {
+    return temp + data;
+});
+console.log(test);
 
 //문자열
 // split(): 구분점을 전달해서 값을 나눠준다.

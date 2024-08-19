@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클래스 이름 선택</title>
+    </head>
+    <body>
+        <h1>클래스 이름 선택</h1>
+        <ul>
+            <li class="odd item">첫번째 아이템이에요!</li>
+            <li class="even item">두번째 아이템이에요!</li>
+            <li class="odd item">세번째 아이템이에요!</li>
+            <li class="even item">네번째 아이템이에요!</li>
+            <li class="odd item">다섯번째 아이템이에요!</li>
+        </ul>
+    </body>
+    <script>
+        HTMLCollection.prototype.forEach = Array.prototype.forEach;
+        // 어떤 문제든 항상 원하는 태그를 JS로 가져올 수 있어야 한다.
+        // odd는 빨간색, even은 녹색으로 변경한다.
+        // const oddItems = document.getElementsByClassName("odd");
+        // oddItems.forEach((li) => {
+        //     li.style.color = "red";
+        // });
+        // const evenItems = document.getElementsByClassName("even");
+        // evenItems.forEach((li) => {
+        //     li.style.color = "green";
+        // });
+
+        // even, odd의 글자색을 각각 녹색, 빨간색으로 변경한다.
+        // 한 큐에 완성한다.
+        const items = document.getElementsByClassName("item");
+        items.forEach((li) => {
+            if (li.className.includes("odd")) {
+                li.style.color = "red";
+            } else if (li.classList.contains("even")) {
+                li.style.color = "green";
+            }
+        });
+    </script>
+</html>
