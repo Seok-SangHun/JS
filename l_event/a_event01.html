@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>이벤트 01</title>
+    </head>
+    <body>
+        <h3>CSS 스타일 동적 변경</h3>
+        <hr />
+        <p>변경될 요소</p>
+        <input type="button" value="스타일 변경" />
+    </body>
+    <script>
+        const button = document.querySelector("input[type=button]");
+        button.addEventListener("click", (e) => {
+            console.log(e);
+            const p = button.previousElementSibling;
+            with (p.style) {
+                fontSize = "30px";
+                width = "200px";
+                border = "1px dashed magenta";
+                textAlign = "center";
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>체크 박스 실습</title>
+    </head>
+    <body>
+        <label> <input type="checkbox" value="선택1" /> 선택1 </label>
+        <label> <input type="checkbox" value="선택2" /> 선택2 </label>
+        <label> <input type="checkbox" value="선택3" /> 선택3 </label>
+        <p id="result"></p>
+    </body>
+    <script>
+        // 체크박스에 선택된 문구가 p태그에 순서대로 출력된다.
+        // 결과는 p태그에 작성하고, 해제될 때에는 해당 문구를 삭제한다.
+        NodeList.prototype.filter = Array.prototype.filter;
+
+        const checkboxes = document.querySelectorAll("input[type=checkbox]");
+        const result = document.getElementById("result");
+
+        // 체크박스를 다 가져온다.
+        checkboxes.forEach((checkbox) => {
+            // 각 체크박스에 클릭 이벤트 리스너를 달아준다.
+            checkbox.addEventListener("click", (e) => {
+                // 어떤 체크박스든지 클릭을 했다면,
+                let text = ``;
+                // 체크박스 상태가 "체크된" 상태라면,
+                if (e.target.checked) {
+                    // 해당 input태그가 가지고 있던 value값을 가져와서
+                    // text에 문자열 형태로 담아준다.
+                    text = `<span class="text">${e.target.value}</span>`;
+                    // text가 완성되었다면, result.innerHTML에 누적해서 연결해준다.
+                    // 왜냐하면, 기존에 있었던 정보는 유지해야하기 때문이다.
+                    result.innerHTML += text;
+                } else {
+                    // 체크가 해제되었다면,
+                    // 기존에 p태그에 있었던 모든 span태그를 가져온다.
+                    const spans = document.querySelectorAll("span.text");
+                    // span태그 중,
+                    // 내용이 현재 해제한 체크박스의 value와 다른 것만 추출한다.
+                    spans
+                        .filter((span) => span.innerText !== e.target.value)
+                        .forEach((span) => {
+                            // 추출된 span태그를 다시 제작한다.
+                            text += `<span class="text">${span.innerText}</span>`;
+                        });
+                    // 완성된 span태그들을 result에 덮어쓴다.
+                    result.innerHTML = text;
+                }
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>객체를 동적으로 생성, 삽입, 삭제</title>
+    </head>
+    <body>
+        <p>DOM 트리에 동적으로 객체를 삽입할 수 있다.</p>
+        <p>
+            createElement(), append(), appendChild(), prepend() insertBefore(),
+            before(), after(), removeChild()
+        </p>
+        <p>위 8개의 메소드를 이용해서 새로운 객체를 생성, 삽입, 삭제한다.</p>
+        <div id="new-object">
+            <p><strong>생성될 객체들</strong></p>
+            <p>마지막 부분</p>
+        </div>
+    </body>
+    <script>
+        const wrap = document.getElementById("new-object");
+        const strong = wrap.firstElementChild.firstElementChild;
+        const p = document.createElement("p");
+        const firstP = wrap.firstElementChild;
+        const lastP = wrap.lastElementChild;
+        const mark = document.createElement("mark");
+        const h1 = document.createElement("h1");
+
+        p.innerText = "새로 생성된 객체";
+        p.style.color = "red";
+
+        mark.innerText = "!!!";
+
+        h1.innerText = "감사합니다!";
+
+        // 접근한 객체의 자식으로 추가된다.
+        // 이 때, 가장 마지막 자식으로 추가된다.
+        // wrap.append(p);
+        // wrap.appendChild(p);
+
+        // 이 때, 가장 위에 추가된다.
+        // wrap.prepend(p);
+
+        // append: 문자열도 연결된다.
+        // strong.append("!");
+        // strong.appendChild(mark);
+
+        // insertBefore: 접근한 객체의 자식으로 추가한다.
+        // 이 때, 전달한 두 개의 값 중, 첫 번째 값이 추가된다.
+        // 두 번째로 전달한 값은 기준점이 되며,
+        // 아래와 같은 경우 lastP앞에 p가 배치된다.
+        // wrap.insertBefore(p, lastP);
+
+        // 형제자매 뒤에 추가
+        // wrap.after(h1);
+
+        // 형제자매 앞에 추가
+        // wrap.before(h1);
+
+        // 자식 태그 객체 삭제
+        // wrap.removeChild(lastP);
+
+        // 본인 삭제
+        // lastP.remove();
+    </script>
+</html>
